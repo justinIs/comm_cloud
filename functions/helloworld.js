@@ -1,7 +1,7 @@
 export const Env = {
     // If you set another name in wrangler.toml as the value for 'binding',
     // replace "AI" with the variable name you defined.
-    AI: Ai
+    AI: AI
 }
 
 export async function onRequest(context) {
