@@ -4,20 +4,10 @@
 //     AI: AI
 // }
 
-export async function onRequest(context) {
-    const res = await fetch(
-        "https://github.com/Azure-Samples/cognitive-services-speech-sdk/raw/master/samples/cpp/windows/console/samples/enrollment_audio_katie.wav"
-    );
-    const blob = await res.arrayBuffer();
+export async function onRequestGet(context) {
+    const id = context.env.track_id.newUniqueId();
+    const stub = context.env.track_id.get(id);
 
-    const input = {
-        audio: [...new Uint8Array(blob)],
-    };
-
-    const response = await env.AI.run(
-        "@cf/openai/whisper",
-        input
-    );
-
-    return Response.json({input: {audio: []}, response});
+    // Pass the request down to the durable object
+    return stub.fetch(context.request);
 }
