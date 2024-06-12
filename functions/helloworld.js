@@ -4,7 +4,7 @@
 //     AI: AI
 // }
 
-export async function onRequestGet(context) {
+export async function onRequest(context) {
     const id = context.env.track_id.newUniqueId();
     const stub = context.env.track_id.get(id);
 
