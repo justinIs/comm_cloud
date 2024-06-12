@@ -2,8 +2,25 @@
 <html>
 <head>
     <title>Hello, CommCon!</title>
+
+    <link href="https://vjs.zencdn.net/7.18.1/video-js.css" rel="stylesheet">
+    <script src="https://vjs.zencdn.net/7.18.1/video.js"></script>
 </head>
 <body>
 <h1>Hello, CommCon!</h1>
+
+<video
+    id="my-video"
+    class="video-js vjs-default-skin" controls
+    preload="auto"
+    width="640"
+    height="360"
+    data-setup='{"techOrder": ["hls"], "sources": [{"src": "https://customer-ux1f05z3hdt69uxj.cloudflarestream.com/8281350118c540738f44ca4f41a70b9d/manifest/video.m3u8", "type": "application/x-mpegURL"}]}'
+>
+    <p class="vjs-no-js">To view this video please enable JavaScript.</p>
+</video>
+<script>
+var player = videojs('my-video');
+</script>
 </body>
 </html>
