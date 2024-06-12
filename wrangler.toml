@@ -1,0 +1,2 @@
+[ai]
+binding = "AI" # available in your Worker code on `env.AI`
