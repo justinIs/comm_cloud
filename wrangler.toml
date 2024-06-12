@@ -1,2 +1,2 @@
 [ai]
-binding = "AI" # available in your Worker code on `env.AI`
+binding = "AI" # i.e. available in your Worker on env.AI
